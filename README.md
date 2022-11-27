@@ -159,11 +159,11 @@
    
    
 # 3. Логическая схема БД
-![image](https://user-images.githubusercontent.com/29610387/202914740-93adecde-d82f-4c7f-a57a-06e6586b2d65.png)
+![image](https://user-images.githubusercontent.com/29610387/204132758-88554852-9a04-4179-961c-a6b88f651931.png)
 
 
 # 4. Физическая схема БД
-![image](https://user-images.githubusercontent.com/29610387/202914856-9bb55947-f1c3-4c34-be39-4832174c4db7.png)
+![image](https://user-images.githubusercontent.com/29610387/204132731-743429f5-b169-4c7e-ab8e-530d543167df.png)
 
 Для хранения основных данных (чатов, сообщений и пользователей) используется база данных PostgreSQL, так как она является одной из наиболее функциональных, производительных и широко распространённых реляционных БД.
 Так как один сервер PostgreSQL не выдержит планируемую нагрузку, выполним шардинг таблицы сообщений. Шардинг таблицы сообщений будем выполнять по полю chat_id.
@@ -200,9 +200,11 @@ Message serice - сервис сообщений.
 
 Record service - сервис, позволяющий записывать данные в базу.
 
-Read service - сервис, позволяющий читать данные из базы.
+Read service - сервис, работающий с брокером сообщений
 
-![image](https://user-images.githubusercontent.com/29610387/202914876-67348e4b-9b98-4ed4-9e5c-c5902dccdf37.png)
+Session service - сервис, работающий Redis сессиями.
+
+![image](https://user-images.githubusercontent.com/29610387/204133395-0103d433-b29e-4113-85b7-0b7f3a22d44a.png)
 
 # 7. Список серверов
 Наш сервис в пике имеет 621 354 RPS и 624 Гб/с сетевого трафика. 
